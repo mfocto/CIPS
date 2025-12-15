@@ -1,0 +1,58 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+*.dylib
+*.dll
+
+# Distribution / packaging
+.Python
+build/
+dist/
+wheels/
+*.egg-info/
+*.egg
+
+# PyInstaller / Nuitka / cx_Freeze
+# These temporary files are created when building a binary with PyInstaller, Nuitka, or cx_Freeze
+# PyInstaller
+*.spec
+# Setuptools/distutils build area
+.cache/
+.dist/
+.temp/
+
+# Virtual environment (가상 환경)
+venv/
+env/
+/bin/
+/include/
+/lib/
+/share/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Editors / IDEs (편집기 및 IDE 설정 파일)
+.idea/             # PyCharm / IntelliJ
+*.iml              # IntelliJ project files
+.vscode/           # VS Code settings
+.DS_Store          # macOS files
+Thumbs.db          # Windows files
+
+# Testing / Debugging
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Jupyter Notebook (Jupyter Notebook 관련)
+.ipynb_checkpoints
+
+# Database / Data (데이터베이스 및 데이터 파일)
+*.sqlite
+*.db
+*.csv
+*.json
+*.log
