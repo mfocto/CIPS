@@ -3,6 +3,11 @@
 REM bat 파일이 루트에서 실행되도록 설정
 cd /d "%~dp0.."
 
+if not exist venv (
+    echo Creating virtual environment....
+    python -m venv venv
+)
+
 if exist venv (
     REM 가상환경 활성화
     call venv\scripts\activate.bat
@@ -19,6 +24,3 @@ if exist venv (
     echo ====== pip install complete! ======
 )
 
-if not exist venv (
-    echo venv not found
-)

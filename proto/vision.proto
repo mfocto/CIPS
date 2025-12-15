@@ -1,0 +1,131 @@
+syntax = "proto3";
+
+package vision_common;
+
+
+// =========================
+// 공통 메시지
+// =========================
+
+message Frame {
+  bytes image = 1;
+  string encoding = 2;
+  string stream_id = 3;
+  int64 frame_id = 4;
+  int64 timestamp_ms = 5;
+}
+
+// 정규화 좌표(0~1) 기준 Bounding Box
+message BoundingBox {
+  float x = 1;
+  float y = 2;
+  float w = 3;
+  float h = 4;
+}
+
+message Detection {
+  string label = 1;     // "object", "circle", "rect", ...
+  float confidence = 2; // 0~1 (룰 기반이면 1.0 가능)
+  BoundingBox bbox = 3;
+}
+
+// =========================
+// Vision 요청 / 응답
+// =========================
+
+message AnalyzeImageRequest {
+  Frame frame = 1;
+  string pipeline_id = 2;
+}
+
+message AnalyzeResult {
+  repeated Detection detection = 1;
+
+  // 파이프 라인 별 수치 결과
+  map<string, float> metrics = 2;
+
+  int64 processing_ms = 3;  // 서버 처리 시간
+}
+
+message AnalyzeImageResponse {
+  AnalyzeResult result = 1;
+}
+
+// =========================
+// 스트리밍
+// =========================
+
+message StreamAnalyzeRequest {
+  Frame frame = 1;
+  string pipeline_id = 2;
+}
+
+message StreamAnalyzeResponse {
+  AnalyzeResult result = 1;
+}
+
+// =========================
+// Admin / 운영
+// =========================
+
+message HealthCheckRequest {}
+
+message HealthCheckResponse {
+  bool healthy = 1;
+  string message = 2;
+}
+
+message Config {
+  // 공통 전처리 설정 (MVP 필수)
+  bool enable_gray = 1;
+  bool enable_blur = 2;
+  int32 blur_ksize = 3;
+
+  // ROI (0이면 미사용)
+  int32 roi_x = 10 ;
+  int32 roi_y = 11 ;
+  int32 roi_w = 12 ;
+  int32 roi_h = 13 ;
+
+  // Resize (0이면 미사용)
+  int32 resize_width = 20;
+  int32 resize_height = 21;
+}
+
+message GetConfigRequest {}
+message GetConfigResponse {
+  Config config = 1;
+}
+
+message UpdateConfigRequest {
+  Config config = 1;
+}
+
+message UpdateConfigResponse {
+  bool success = 1;
+}
+
+// =========================
+// 서비스 정의
+// =========================
+
+service VisionService {
+  // 단일 이미지 분석
+  rpc AnalyzeImage (AnalyzeImageRequest)
+      returns (AnalyzeImageResponse);
+
+  // 프레임 스트리밍 분석
+  rpc StreamAnalyze (stream StreamAnalyzeRequest)
+      returns (stream StreamAnalyzeResponse);
+}
+
+service AdminService {
+  rpc HealthCheck (HealthCheckRequest)
+      returns (HealthCheckResponse);
+
+  rpc GetConfig (GetConfigRequest)
+      returns (GetConfigResponse);
+
+  rpc UpdateConfig (UpdateConfigRequest)
+      returns (UpdateConfigResponse);
+}

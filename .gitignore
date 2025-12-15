@@ -56,3 +56,5 @@ htmlcov/
 *.csv
 *.json
 *.log
+
+generated/
