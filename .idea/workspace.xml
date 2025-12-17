@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fdebfe9-1396-43ab-b6f1-1fc08afd1279" name="변경" comment="이따할거">
-      <change afterPath="$PROJECT_DIR$/src/config/config_store.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/defaults.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/validation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/registry.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/admin_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/vision_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CIPS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CIPS.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="5fdebfe9-1396-43ab-b6f1-1fc08afd1279" name="변경" comment="12.17 중간커밋&#10;* 기본 설정 파일 추가&#10;* 서버 시작 부분 작성">
+      <change afterPath="$PROJECT_DIR$/src/core/decoder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/preprocessor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/vision.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/vision.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,27 +47,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Batch.generate_proto.executor": "Run",
-    "Batch.requirements (1).executor": "Run",
-    "Batch.requirements.executor": "Run",
-    "Batch.test.executor": "Run",
-    "Python.server.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/projects/python/CIPS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Batch.generate_proto.executor&quot;: &quot;Run&quot;,
+    &quot;Batch.requirements (1).executor&quot;: &quot;Run&quot;,
+    &quot;Batch.requirements.executor&quot;: &quot;Run&quot;,
+    &quot;Batch.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.server.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/projects/python/CIPS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\projects\python\CIPS\src" />
@@ -166,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765790897538</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="12.17 중간커밋&#10;* 기본 설정 파일 추가&#10;* 서버 시작 부분 작성">
+      <option name="closed" value="true" />
+      <created>1765953853233</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1765953853233</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +173,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="이따할거" />
-    <option name="LAST_COMMIT_MESSAGE" value="이따할거" />
+    <MESSAGE value="12.17 중간커밋&#10;* 기본 설정 파일 추가&#10;* 서버 시작 부분 작성" />
+    <option name="LAST_COMMIT_MESSAGE" value="12.17 중간커밋&#10;* 기본 설정 파일 추가&#10;* 서버 시작 부분 작성" />
   </component>
 </project>
