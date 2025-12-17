@@ -80,6 +80,8 @@ message Config {
   bool enable_gray = 1;
   bool enable_blur = 2;
   int32 blur_ksize = 3;
+  bool enable_roi = 4;
+  bool enable_resize = 5;
 
   // ROI (0이면 미사용)
   int32 roi_x = 10 ;
